@@ -1,0 +1,80 @@
+<main class="page-content" aria-label="Content">
+    <div class="wrapper">
+        <header class="post-header">
+            <h1 style="letter-spacing: -1px;line-height: 1">List 100</h1>
+        </header>
+        <div class="post-content">
+            <p onclick="sortList()">
+                <input disabled value="By Myself" size=5> - Progress as of Aug 7, 2022.
+            </p>
+            <ol id="id01">
+                <li>✓ Have the chance to live in another country for years (U.S.)</li>
+                <li>✓ Travel to Japan (2x!)</li>
+                <li>✗ Ride a hot air balloon</li>
+                <li>✓ Build my own website</li>
+                <li>✗ Scuba diving</li>
+                <li>✗ Start a nonprofit organization</li>
+                <li>✗ Visit Hawaii</li>
+                <li>✓ Be a full-stack engineer</li>
+                <li>✓ Have my own car (Nissan)</li>
+                <li>✗ Publish an open-source package</li>
+                <li>✗ Earn more than 100 star in GitHub</li>
+                <li>✗ Create my own programming language</li>
+                <li>✗ Surfing</li>
+                <li>✗ Write a blog</li>
+                <li>✗ Eat at a 3 Michelin star restaurant</li>
+                <li>✗ See auroras (Alaska)</li>
+                <li>✓ Play in a casino (lost $30)</li>
+                <li>✗ Zero gravity</li>
+                <li>✗ Visit Googleplex</li>
+                <li>✗ Visit all Disneylands around the world (Tokyo✓)</li>
+                <li>✗ Travel around Western Europe (Austria, France, Germany, etc.)</li>
+                <li>✓ Walk on the Great Wall of China</li>
+                <li>✗ Learn Japanese</li>
+                <li>✓ Travel with friends (Las Vegas 2018, Santa Fee 2022)</li>
+                <li>✓ Shoot a gun (Tucson)</li>
+                <li>✗ Go karting</li>
+                <li>✗ Eat at an undersea restaurant</li>
+                <li>✓ Visit Boston (Boston & New York, Jun 2022)</li>
+                <li>✓ Visit Seattle (Apr 2023)</li>
+                <li>✓ Visit Miami (Dec 2023)</li>
+                <li>✗ Visit San Diego</li>
+                <li>✓ Get an offer by graduation</li>
+
+            </ol>
+        </div>
+    </div>
+</main>
+<script>
+    function sortList() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("id01");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            b = list.getElementsByTagName("LI");
+            // Loop through all list items:
+            for (i = 0; i < (b.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Check if the next item should
+                switch place with the current item: */
+                if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+                    /* If next item is alphabetically lower than current item,
+                    mark as a switch and break the loop: */
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark the switch as done: */
+                b[i].parentNode.insertBefore(b[i + 1], b[i]);
+                switching = true;
+            }
+        }
+    }
+</script>

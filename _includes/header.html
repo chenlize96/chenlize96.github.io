@@ -1,0 +1,45 @@
+<!-- <link rel="stylesheet" href="/assets/css/menu.css"> -->
+<header class="site-header" role="banner" id="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">Lize Chen</a>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <img
+            alt="menu icon"
+            src="/assets/img/icons/menu-64.png"
+            width="18px"
+            height="15px"
+          />
+        </span>
+      </label>
+      <div class="trigger">
+        <a class="page-link" href="#content">About</a>
+        <!-- <a class="page-link" href="/blog/">Blog</a> -->
+        <!-- <a class="page-link" href="/photos/">Photos</a> -->
+        <a class="page-link" href="#projects">Projects</a>
+        <a class="page-link" href="#misc">Misc/CV</a>
+        <!-- <a class="page-link" href="/list-100/">List 100</a> -->
+        <a class="page-link" href="#contact">Contact</a>
+        <a>
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="label" id="label">
+            <i class="fa fa-sun-o" style="font-size: 12px; color: white"></i>
+            <i class="fa fa-moon-o" style="font-size: 12px; color: pink"></i>
+            <i class="ball" id="ball"></i>
+          </label>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+<script>
+  const checkbox = document.getElementById("checkbox");
+
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("light");
+    document.getElementById("ball").classList.toggle("light");
+    document.getElementById("label").classList.toggle("light");
+  });
+</script>
